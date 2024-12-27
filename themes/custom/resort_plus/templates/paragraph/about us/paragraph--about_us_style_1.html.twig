@@ -1,0 +1,21 @@
+<section class="about-us home-1-about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="about-us-content">
+                    <span class="tagline">{{content.field_tag_line.0}}</span>
+                    <h2 class="section-title">{{content.field_title.0}}</h2>
+                    <div class="discription">
+                        {{content.field_description.0}}
+                    </div>
+                    <a class="button-link" href="{{content.field_button_link.0['#url']}}">{{content.field_button_link.0['#title']}}</a>     
+                </div>
+            </div>    
+            <div class="col-md-6">
+                <div class="img-wrapper">
+                    <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" alt="{{file_url(content.field_image['#items'].alt)}}">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>   

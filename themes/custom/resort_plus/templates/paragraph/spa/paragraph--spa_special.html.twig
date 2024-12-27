@@ -1,0 +1,99 @@
+{# <section class="spa-special">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                {{ content.field_tagline.0 }}
+                {{ content.field_title.0 }}
+            </div>
+            <div class="col-md-12">
+                <ul class="row nav nav-tabs" role="tablist"> 
+                    {% for key,value in content.field_spa_and_wellness['#items'] %}
+                        {% if loop.first %}
+                            {% set show = "active" %}
+                        {% else %}
+                            {% set show = "" %}
+                        {% endif %}
+                        {% set feature = content.field_spa_and_wellness[key] %}
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link {{show}}" id="button-tab-{{feature['#paragraph'].id()}}" data-bs-toggle="tab" data-bs-target="#tab-{{feature['#paragraph'].id()}}" type="button" role="tab" aria-controls="home" aria-selected="true">
+                                {{ feature['#paragraph'].field_title.0.value }}
+                            </button>
+                        </li>
+                    {% endfor %}
+                </ul>
+                <div class="tab-content">
+                    {% for key,value in content.field_spa_and_wellness['#items'] %}
+                        {% if loop.first %}
+                            {% set show = "show active" %}
+                        {% else %}
+                            {% set show = "" %}
+                        {% endif %}
+                        {% set feature = content.field_spa_and_wellness[key] %}
+                        <div role="tabpanel" class="tab-pane fade {{show}}" id="tab-{{ feature['#paragraph'].id() }}">  
+                            <div class="row">
+                                {{ feature }}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section> #}
+
+<section class="reservation spa-special">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="item-wrapper">
+                    <img src="{{file_url(content.field_background_image['#items'].entity.uri.value)}}" alt="spa-welness"/>
+                </div>    
+            </div>    
+            <div class="col-md-8">
+                <div class="item-wrapper">
+                    <img src="{{file_url(content.field_background_image_2['#items'].entity.uri.value)}}" alt="spa-welness"/>
+                </div>
+            </div>      
+        </div>  
+        <div class="container content">
+            <div class="row">
+                <div class="col-md-5">
+                    <span class="tagline">{{content.field_tag_line.0}}</span>
+                    <h2>{{content.field_title.0}}</h2>
+                </div>
+                <div class="col-md-7 spa-tab">
+                    <ul class="row nav nav-tabs" role="tablist"> 
+                        {% for key,value in content.field_spa_and_wellness['#items'] %}
+                            {% if loop.first %}
+                                {% set show = "active" %}
+                            {% else %}
+                                {% set show = "" %}
+                            {% endif %}
+                            {% set feature = content.field_spa_and_wellness[key] %}
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link {{show}}" id="button-tab-{{feature['#paragraph'].id()}}" data-bs-toggle="tab" data-bs-target="#tab-{{feature['#paragraph'].id()}}" type="button" role="tab" aria-controls="home" aria-selected="true">
+                                    {{ feature['#paragraph'].field_title.0.value }}
+                                </button>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="tab-content">
+                        {% for key,value in content.field_spa_and_wellness['#items'] %}
+                            {% if loop.first %}
+                                {% set show = "show active" %}
+                            {% else %}
+                                {% set show = "" %}
+                            {% endif %}
+                            {% set feature = content.field_spa_and_wellness[key] %}
+                            <div role="tabpanel" class="tab-pane  {{show}}" id="tab-{{ feature['#paragraph'].id() }}">  
+                                {# <div class="row"> #}
+                                    {{ feature }}
+                                {# </div> #}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>    
+</section>

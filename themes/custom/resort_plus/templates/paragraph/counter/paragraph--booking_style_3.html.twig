@@ -1,0 +1,21 @@
+
+ <section class="discount-counter offer-style-3" style="background-image: url({{ file_url(content.field_background_image['#items'].entity.uri.value) }});" >
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-12 col-12">
+                <div class="item">
+                    <div class="item-content">
+                        <h2 class="offers-title">{{ content.field_title.0 }}</h2>
+                        <h3>{{content.field_offers_1.0}}</h3>
+                        <div class="offer">
+                           <h4>{{content.field_description.0}}</h4>
+                        </div>
+                        <a href="{{ content.field_button_link.0['#url'] }}" class="button-link" title="{{ content.field_button_link.0['#title'] }}">{{ content.field_button_link.0['#title'] }}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

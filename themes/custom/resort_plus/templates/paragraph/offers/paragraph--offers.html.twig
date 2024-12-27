@@ -1,0 +1,30 @@
+<section class="offers">
+    <div class="container">
+        <div class="row">
+            <div class="tag-title">
+                <span class="tagline">{{content.field_tag_line.0}}</span>
+                <h2 class="sec-title">{{content.field_title.0}}</h2>
+            </div>
+            <div class="col-md-6">
+                <div class="offer-image-1">
+                    <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" alt="{{file_url(content.field_image['#items'].alt)}}">
+                    <div class="offer-overlay">
+                        <h2>{{content.field_offers_1.0}}</h2>
+                        <div class="btn-link btn-links">
+                            <a href="{{content.field_button_link.0['#url']}}">{{content.field_button_link.0['#title']}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="offer-image-2">
+                    <img src="{{file_url(content.field_image_2['#items'].entity.uri.value)}}" alt="{{file_url(content.field_image['#items'].alt)}}">
+                    <div class="offer-overlay-1">
+                        <div class="offer-overflay-title">{{content.field_offers_2.0}}</div>
+                        <a href="{{content.field_button_link_2.0['#url']}}">{{content.field_button_link_2.0['#title']}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

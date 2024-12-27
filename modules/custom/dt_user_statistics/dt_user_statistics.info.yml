@@ -1,0 +1,5 @@
+name: Drupalthemes.io Statistics
+type: module
+description: 'Drupalthemes.io Statistics'
+package: Drupalthemes.io
+core_version_requirement: ^9 || ^10

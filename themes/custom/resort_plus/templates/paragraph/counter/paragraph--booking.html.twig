@@ -1,0 +1,80 @@
+{% set base_url = url('<front>') %} 
+<!-- Home Banner Style 2 -->
+ <section class="discount-counter" style="background-image: url({{ file_url(content.field_background_image['#items'].entity.uri.value) }});" >
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-12 col-12">
+                <div class="item">
+                    <div class="item-content">
+                        
+                        <div class="cs-counter">
+                            <div class="cs-date">
+                                <div class="overlay">
+                                    <span class="time" id="day-eve-1" >00</span>
+                                    <div class="counting-title" >DAYS</div>
+                                </div>
+                            </div>
+                            <div class="cs-date">
+                                <div class="overlay">
+                                    <span class="time" id="hour-eve-1" >00</span>
+                                    <div class="counting-title">HOURS</div>
+                                </div>
+                            </div>
+                            <div class="cs-date">
+                                <div class="overlay">
+                                    <span class="time" id="minute-eve-1" >00</span>
+                                    <div class="counting-title">MINS</div>
+                                </div>
+                            </div>
+                            <div class="cs-date">
+                                <div class="overlay">
+                                    <span class="time" id="second-eve-1" >00</span>
+                                    <div class="counting-title">SECS</div>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>{{ content.field_title.0 }}</h2>
+                        <div class="offer">
+                           <h4>{{content.field_description.0}}</h4>
+                        </div>
+                        {%	if  content.field_button_link[0]  %}
+                        <a href="{{ content.field_button_link.0['#url'] }}" class="button-link" title="{{ content.field_button_link.0['#title'] }}">{{ content.field_button_link.0['#title'] }}
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% if content.field_date.0 %}
+<script>
+        let dayItem = document.querySelector("#day-eve-1");
+        let hourItem = document.querySelector("#hour-eve-1");
+        let minuteItem = document.querySelector("#minute-eve-1");
+        let secondItem = document.querySelector("#second-eve-1");
+
+        let countDown = () =>{
+            let futureDate = new Date("{{ paragraph.field_date.value|date('d M Y') }} ");
+            let currentDate = new Date();
+            let myDate = futureDate - currentDate;
+
+            let days = Math.floor(myDate / 1000 / 60 / 60 /24);
+            let hours = Math.floor(myDate / 1000 / 60 / 60) % 24;
+            let minutes = Math.floor(myDate / 1000 / 60) % 60;
+            let seconds = Math.floor(myDate / 1000) % 60;
+
+            minutes = minutes < 0? 0 : minutes; //Check if they are lower than 0, if yes, set them to 0
+            seconds = seconds < 0? 0 : seconds;
+            days = days < 0? 0 : days;
+            hours = hours < 0? 0 : hours;
+
+            dayItem.innerHTML = days;
+            hourItem.innerHTML =("0" + hours).slice(-2);
+            minuteItem.innerHTML = ("0" + minutes).slice(-2);
+            secondItem.innerHTML = ("0" + seconds).slice(-2);
+        }
+        countDown()
+        setInterval(countDown, 1000)
+</script>
+{% endif %}

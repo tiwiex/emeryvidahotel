@@ -1,0 +1,59 @@
+
+{% if content.field_layouts.0['#markup'] in 'Contact us style 1' %}
+<section class="contact">
+    <div class="container">
+        <div class="contact-icon-wrapper">
+            <div class="row">
+                {{content.field_paragraph}}
+            </div>
+        </div>
+        <div class="contact-us-wrapper">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-details">
+                        <h1>{{content.field_title.0}}</h1>
+                        <p>{{content.field_description.0}}</p>
+                        <div class="contact-form">
+                            {{content.field_contact_us_form}}
+                        </div>
+                    </div>    
+                </div>
+                <div class="col-md-6">
+                    <div class="contact-us-map">
+                    {{content.field_map	.0}}
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>
+</section>
+
+{% else %}
+<section class="contact contact-style-2">
+    <div class="container">
+        <div class="contact-us-wrapper">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="contact-details">
+                        <h1>{{content.field_title.0}}</h1>
+                        <p>{{content.field_description.0}}</p>
+                        <div class="contact-items">
+                          {{content.field_paragraph}}
+                        </div>   
+                    </div>    
+                </div>
+                <div class="col-md-6">
+                    <div class="contact-form">
+                        {{content.field_contact_us_form}}
+                    </div> 
+                </div>
+            </div>
+        </div>    
+    </div>
+    <div class="col-md-12">
+        <div class="contact-us-map">
+            {{content.field_map	.0}}
+        </div>
+    </div>
+</section>
+{% endif %}

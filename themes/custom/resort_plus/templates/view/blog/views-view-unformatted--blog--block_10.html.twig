@@ -1,0 +1,11 @@
+<section class="blog-grid-3 latest-blogs">
+	<div class="container">
+		<div class="row">
+			<h2 class="latest-blog-title">Latest Blog</h2>
+			{% for row in rows %}
+			{{ row.content }}
+			{% endfor %}
+		</div>
+	</div>
+</section>
+

@@ -1,0 +1,40 @@
+<?php
+
+/**
+ * @file
+ * This is the module to track a drupalthemes.io themes usage tracking.
+ */
+
+use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\ServerException;
+
+/**
+ * Implements Update projects alter hook.
+ */
+function dt_user_statistics_update_projects_alter(&$projects) {
+  dt_user_statistics_cron();
+}
+
+/**
+ * Implements cron hook.
+ */
+function dt_user_statistics_cron() {
+  $config = \Drupal::config('system.theme');
+  $default_theme = $config->get('default');
+  $host = \Drupal::request()->getSchemeAndHttpHost();
+  $base_url = \Drupal::request()->getBaseUrl();
+  $site_url = $host . $base_url;
+  $token = "aHR0cHM6Ly93d3cuZHJ1cGFsdGhlbWVzLmlvLw==";
+  $api_url = base64_decode($token) . '/theme-domain/' . $default_theme . '?domain=' . $site_url;
+  if (filter_var($api_url, FILTER_VALIDATE_URL)) {
+    try {
+      $response = \Drupal::httpClient()->get($api_url, ['headers' => ['Accept' => 'text/html']]);
+    }
+    catch (ClientException $e) {
+    }
+    catch (ServerException $e) {
+    }
+    catch (Exception $e) {
+    }
+  }
+}

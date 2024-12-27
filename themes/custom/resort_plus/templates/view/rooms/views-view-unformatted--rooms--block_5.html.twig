@@ -1,0 +1,17 @@
+
+        <div class="room-list-full">
+		{% for row in rows %}
+            {% if loop.index is odd %}
+                <div class = "first">
+                {{ row.content }}
+                </div>
+            {% else %}
+                <div class = "second">
+                {{ row.content }}
+                </div>
+            {% endif %}
+        {% endfor %}
+        </div>
+      
+
+

@@ -1,0 +1,20 @@
+{# {% if content.field_slider_style.0['#markup'] in 'style 1' %} #}
+<section class="header1 home-slide-01" style="background-image: url('{{file_url(content.field_background_image['#items'].entity.uri.value)}}');background-repeat: no-repeat;background-size: cover; height:800px; position:relative;">
+    <div class="container header-slider-1">
+        <div class="slider-wrapper">
+            <div class=" owl-carousel home-slider-1 owl-theme">
+              {{content.field_home_slide}}
+            </div>
+            <div class="counter">
+                <div class="active-slider">
+                </div>
+                <div class="next-slider">
+                </div>
+              </div>
+        </div>
+        <div class="rooms_check"> 
+           {{content.field_check_availability_form}}
+        </div>
+    </div>
+</section>
+  

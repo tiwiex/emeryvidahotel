@@ -1,0 +1,41 @@
+<section class="careers-details">
+    <div class="container">
+        <div class="career-title">
+            <h2>{{label}}</h2>
+            <div class="addToany">
+                <p>Share this Opportunity</p> {{ content.addtoany }} 
+            </div> 
+        </div>    
+        <div class="caree">
+            <div class="border-bottom">
+                <h3>{{content.field_job_description_title.0}}</h3>
+            </div>    
+            <ul class="packages list-unstyled">
+            {% for key,value in content.field_job_description_list['#items'] %}
+               <li> 
+                    <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+                            <circle id="Oval" cx="75" cy="75" r="75" fill="#f9593a"></circle>
+                        </svg>
+                    <p>{{content.field_job_description_list[key]}}</p>
+               </li>
+            {% endfor %}   
+           </ul> 
+        </div>
+        <div class="caree">
+            <div class="border-bottom">
+                <h3>{{content.field_content_title.0}}</h3>
+            </div>    
+             <div class="content">
+                {{content.field_description.0}}
+            </div>
+        </div>
+        <div class="job-details">
+            <h3><span>Job Type :</span>  {{content.field_job_type.0}}</h3>
+            <h3><span>Location :</span>  {{content.field_location.0}}</h3>
+            <h3><span>Years Of Experience :</span>  {{content.field_experience.0}}</h3>
+            <div class="btn-link">
+                <a href="{{content.field_button_link.0['#url']}}" tabindex="-1">{{content.field_button_link.0['#title']}}</a>
+            </div>
+        </div>    
+    </div>
+</section>

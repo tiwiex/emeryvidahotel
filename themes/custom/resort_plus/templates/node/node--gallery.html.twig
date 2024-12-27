@@ -1,0 +1,13 @@
+<section class="gallery-details">
+    <div class="container">
+        <div class="picture">
+            <img src="{{ file_url(content.field_image['#items'].entity.uri.value) }}" alt="{{content.field_image['#items'].alt}}" />
+        </div>
+        <div class="menu-full-width">
+            <h3>{{content.field_sub_title.0}}</h3>
+        </div>    
+        <div class="content">
+            {{content.body.0}}
+        </div>
+    </div>
+</section>        

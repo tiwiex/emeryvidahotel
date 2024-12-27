@@ -1,0 +1,36 @@
+{% set base_url = url('<front>')  %}
+<section class="blogs-details blogs">
+    <div class="container">
+        <div class="content">
+            {{content.body.0}}
+        </div>
+        <div class="owl-carousel carousels-3 owl-theme">
+             {% for key,value in content.field_multiple_image['#items'] %}
+                    <img src="{{ file_url(content.field_multiple_image['#items'][key].entity.uri.value) }}" alt="{{content.field_multiple_image['#items'][key].alt}}" />
+            {% endfor %}
+        </div> 
+        <h3>{{content.field_content_title.0}}</h3>
+        {{content.field_description.0}}
+        <div class="blockquate">
+            {{content.field_blockquote.0}}
+        </div>
+        <div class="tag-addtoany">  
+            <div class="tags">
+                <h3>Tags</h3>
+                {% for key,value in content.field_tag['#items'] %}
+                    <div class="tag-hover"><p>#</p>{{content.field_tag[key]}}</div>  
+                {% endfor %}
+            </div>        
+            <div class="addToany">
+                   <h3>Share</h3> {{ content.addtoany }} 
+            </div>  
+        </div>  
+        <h2 class="comment-count">{{comment_count}} Comments</h2>
+        {{content.field_comment}}  
+        {% if logged_in == false %}
+            <div class="login-wrapper">
+                <h3><a href="{{base_url}}/user/login" title="Login">Login</a> or <a href="{{base_url}}/user/register" title="Register">Register</a> to post comments</h3>
+            </div>
+        {% endif %} 
+    </div>
+</section>

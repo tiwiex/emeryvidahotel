@@ -1,0 +1,20 @@
+
+<div class="col-md-6">
+    <div class="blog-grid">
+        {# {% for key,value in content.field_multiple_image['#items'] %} #}
+            <img src="{{ file_url(content.field_image['#items'].entity.uri.value) }}" alt="{{content.field_image['#items'].alt}}" />
+        {# {% endfor %} #}
+        <div class="blog-detail">
+            <div class="blog-date">
+                <p>{{node.getCreatedTime|format_date('custom','d M, Y')}}</p>
+            </div>
+            <h3>{{content.field_content_title.0}}</h3>
+            {{content.body.0}}
+            <div class="read">
+                <a href="{{ url('entity.node.canonical', { 'node': node.id() }) }}" title="blog">{{ 'Read More'|t }}
+                
+                </a>
+            </div>
+        </div> 
+    </div>       
+</div>

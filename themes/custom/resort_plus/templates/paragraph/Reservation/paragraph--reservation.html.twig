@@ -1,0 +1,28 @@
+<section class="reservation reservation1">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5">
+                <div class="item-wrapper">
+                    <img src="{{file_url(content.field_background_image['#items'].entity.uri.value)}}" alt="Background-image"/>
+                </div>    
+            </div>    
+            <div class="col-md-7">
+                <div class="item-wrapper">
+                    <img src="{{file_url(content.field_background_image_2['#items'].entity.uri.value)}}" alt="Background-image"/>
+                </div>
+            </div>      
+        </div>  
+       
+        <div class="container content">
+            <div class="row">
+                <div class="col-md-5">
+                    <span class="tagline">{{content.field_tag_line.0}}</span>
+                    <h2>{{content.field_title.0}}</h2>
+                </div>
+                <div class="col-md-7">
+                    {{content.field_reservation_form}}
+                </div> 
+            </div>
+        </div>
+    </div>    
+</section>

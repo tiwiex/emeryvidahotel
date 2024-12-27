@@ -1,0 +1,223 @@
+{% set base_url = url('<front>') %}
+{% if 'header-1' in header_variation %}
+<header id="header-1" class="header header_type {{active_1}} fixed-top">
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-header">
+                <h5><a href="tel:{{phoneNumberForValidator}}">{{phoneNumber}}</a></h5>
+                <h5 class="site-add">{{address}}</h5>
+                <a href="{{bookingLink}}" class="header-book-link">{{bookingLinkText}}</a>
+            </div>
+        </div>
+    </div>    
+     <!-- header 1 Start -->
+    <div class="header1">
+    {% if sticky == 1 %}
+        <div class="nav-sticky header-fixed">
+    {% else %}
+        <div class="nav-sticky">
+    {% endif %}
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        {% if page.header %}
+                            {{page.header}}
+                        {% endif %}
+                        <button class="navbar-toggler collapsed hamber-btn" type="button" data-bs-toggle="collapse" data-bs-target="#headernavbar-1">
+                            <svg class="hamber-icon" xmlns="http://www.w3.org/2000/svg" width="100" height="75" viewBox="0 0 100 75">
+                                <path data-name="Icon metro-menu" d="M6.427,85.283h100v-12.5h-100v12.5Zm0-31.25h100v-12.5h-100v12.5Zm0-43.75v12.5h100v-12.5h-100Z" transform="translate(-6.427 -10.283)" fill="#16161b"/>
+                            </svg>
+                             <svg class="close-icon dnone"  xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+                                <path id="Union_" data-name="Union 9" d="M75,94.569,19.564,150,0,130.436,55.432,75,0,19.564,19.564,0,75,55.433,130.427,0,150,19.573,94.567,75l55.425,55.425L130.427,150Z"/>
+                            </svg>
+                        </button>
+                        <div class="collapse navbar-collapse" id="headernavbar-1">
+                            {% if page.primary_menu %}
+                            {{page.primary_menu}}
+                            {% endif %}
+                        </div>
+                        <a href="#" title="search" role="button" id="searchdropdown1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150.015" viewBox="0 0 150 150.015" id="header-search">
+                                <path data-name="Path 39004" d="M251.566,97.945a63.625,63.625,0,0,0-48.147,105.237L165.2,241.471l6.488,6.489,38.244-38.289A63.624,63.624,0,1,0,251.568,97.945Zm38.495,102.048a54.109,54.109,0,1,1,16.095-38.506A54.452,54.452,0,0,1,290.061,199.993Z" transform="translate(-165.199 -97.945)" fill="#111"/>
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu header-seach-form" aria-labelledby="searchdropdown1">
+                            <form action="{{base_url}}/search/node" method="get" data-once="form-updated" data-drupal-form-fields="">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search" aria-describedby="search-value" name="keys">
+                                    <button class="btn btn-primary" type="submit" id="search-value">Search</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+ <!-- header 1 End -->
+ {% elseif  'header-2' in header_variation %}
+  <!-- header 2 Start -->
+<header  id="header-2" class="header header_type {{active_2}}">
+    <div class="top-header-wrapper">
+        <div class="container">
+            <div class="top-header">
+                <div class="top-header-ph top-header-contat">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="69.63" height="69.632" viewBox="0 0 69.63 69.632"  class="header-contact">
+                    <path id="phone" d="M54.96,41.568v7.956a5.31,5.31,0,0,1-5.793,5.3,52.655,52.655,0,0,1-22.932-8.142A51.766,51.766,0,0,1,10.291,30.775,52.417,52.417,0,0,1,2.133,7.782,5.308,5.308,0,0,1,7.421,2h7.972a5.311,5.311,0,0,1,5.315,4.561,34,34,0,0,0,1.86,7.452,5.3,5.3,0,0,1-1.2,5.6L18,22.978A42.475,42.475,0,0,0,33.941,38.89l3.375-3.368a5.322,5.322,0,0,1,5.607-1.193,34.175,34.175,0,0,0,7.467,1.856A5.307,5.307,0,0,1,54.96,41.568Z" transform="matrix(0.966, 0.259, -0.259, 0.966, 14.609, -0.028)" fill="none" stroke="#e4a853" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+                    </svg>
+                    <h5><a href="tel:{{phoneNumberForValidator}}">{{phoneNumber}}</a></h5>
+                </div>
+                <div class="top-header-address top-header-contat">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="57.32" height="69.394" viewBox="0 0 57.32 69.394" class="header-contact">
+                        <g id="map-pin" transform="translate(-0.5 1.5)">
+                            <path id="Path_27" data-name="Path 27" d="M55.32,27.343c0,20.489-26.16,38.051-26.16,38.051S3,47.832,3,27.343a26.161,26.161,0,1,1,52.32,0Z" transform="translate(0)" fill="none" stroke="#e4a853" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+                            <circle id="Ellipse_171" data-name="Ellipse 17" cx="10.062" cy="10.062" r="10.062" transform="translate(18.845 17.215)" fill="none" stroke="#e4a853" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+                        </g>
+                    </svg>    
+                    <h5 class="site-add">{{address}}</h5>
+                </div>  
+                <div class="langu">
+                    {{ page.top_header }}  
+                    <a href="{{bookingLink}}" class="header-book-link">{{bookingLinkText}}</a>
+                </div>    
+            </div>
+        </div>
+    </div>
+    <div class="header-temp ">
+        {% if sticky == 1 %}
+            <div class="nav-sticky  header-fixed">
+        {% else %}
+            <div class="nav-sticky">
+        {% endif %}
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        {% if page.header %}
+                            {{page.header}}
+                        {% endif %}
+                        <button class="navbar-toggler collapsed hamber-btn" type="button" data-bs-toggle="collapse" data-bs-target="#headernavbar-2">
+                            <svg class="hamber-icon" xmlns="http://www.w3.org/2000/svg" width="100" height="75" viewBox="0 0 100 75">
+                                <path data-name="Icon metro-menu" d="M6.427,85.283h100v-12.5h-100v12.5Zm0-31.25h100v-12.5h-100v12.5Zm0-43.75v12.5h100v-12.5h-100Z" transform="translate(-6.427 -10.283)" fill="#16161b"/>
+                            </svg>
+                            <svg class="close-icon dnone"  xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+                                <path id="Union_9" data-name="Union 9" d="M75,94.569,19.564,150,0,130.436,55.432,75,0,19.564,19.564,0,75,55.433,130.427,0,150,19.573,94.567,75l55.425,55.425L130.427,150Z"/>
+                            </svg>
+                        </button>
+                        <div class="collapse navbar-collapse" id="headernavbar-2">
+                            {% if page.primary_menu %}
+                            {{page.primary_menu}}
+                            {% endif %}
+                        </div>
+                        <a href="#" title="search" role="button" id="searchdropdown2" data-bs-toggle="dropdown" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150.015" viewBox="0 0 150 150.015" id="header-search">
+                                <path data-name="Path 39004" d="M251.566,97.945a63.625,63.625,0,0,0-48.147,105.237L165.2,241.471l6.488,6.489,38.244-38.289A63.624,63.624,0,1,0,251.568,97.945Zm38.495,102.048a54.109,54.109,0,1,1,16.095-38.506A54.452,54.452,0,0,1,290.061,199.993Z" transform="translate(-165.199 -97.945)" fill="#111"/>
+                            </svg>
+                        </a>
+                         <div class="dropdown-menu header-seach-form" aria-labelledby="searchdropdown2">
+                            <form action="{{base_url}}/search/node" method="get" data-once="form-updated" data-drupal-form-fields="">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search" aria-describedby="search-value" name="keys">
+                                    <button class="btn btn-primary" type="submit" id="search-value">Search</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <button class="navbar-toggler collapsed sidebar" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-1">
+                <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" viewBox="0 0 46 46">
+                    <g id="Group_40189" data-name="Group 40189" transform="translate(13910.066 16554.066)">
+                        <rect id="Rectangle_4" data-name="Rectangle 4" width="8" height="8" rx="4" transform="translate(-13883.066 -16554.066) rotate(90)" fill="#16161b"/>
+                        <rect id="Rectangle_5" data-name="Rectangle 5" width="8" height="8" rx="4" transform="translate(-13902.066 -16554.066) rotate(90)" fill="#16161b"/>
+                        <rect id="Rectangle_18056" data-name="Rectangle 18056" width="8" height="8" rx="4" transform="translate(-13883.066 -16535.066) rotate(90)" fill="#16161b"/>
+                        <rect id="Rectangle_18057" data-name="Rectangle 18057" width="8" height="8" rx="4" transform="translate(-13902.066 -16535.066) rotate(90)" fill="#16161b"/>
+                        <rect id="Rectangle_18117" data-name="Rectangle 18117" width="8" height="8" rx="4" transform="translate(-13883.066 -16516.066) rotate(90)" fill="#16161b"/>
+                        <rect id="Rectangle_18118" data-name="Rectangle 18118" width="8" height="8" rx="4" transform="translate(-13902.066 -16516.066) rotate(90)" fill="#16161b"/>
+                        <rect id="Rectangle_18119" data-name="Rectangle 18119" width="8" height="8" rx="4" transform="translate(-13864.066 -16554.066) rotate(90)" fill="#16161b"/>
+                        <rect id="Rectangle_18120" data-name="Rectangle 18120" width="8" height="8" rx="4" transform="translate(-13864.066 -16535.066) rotate(90)" fill="#16161b"/>
+                        <rect id="Rectangle_18121" data-name="Rectangle 18121" width="8" height="8" rx="4" transform="translate(-13864.066 -16516.066) rotate(90)" fill="#16161b"/>
+                    </g>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>
+    <!-- header 2 End -->
+     <!-- header 3 Start -->
+{% elseif 'header-3' in header_variation %}
+<header id="header-3" class="header header_type {{active_3}}">
+    <div class="header-3">
+    {% if sticky == 1 %}
+        <div class="nav-sticky-3  header-fixed">
+    {% else %}
+        <div class="nav-sticky-3">
+    {% endif %}
+            <div class="container">
+                <nav class="navbar navbar-expand-lg">
+                    <div class="container-fluid">
+                        {% if page.header %}
+                            {{page.header}}
+                        {% endif %}
+                        <button class="navbar-toggler collapsed hamber-btn" type="button" data-bs-toggle="collapse" data-bs-target="#headernavbar-3">
+                            <svg class="hamber-icon" xmlns="http://www.w3.org/2000/svg" width="100" height="75" viewBox="0 0 100 75">
+                                <path data-name="Icon metro-menu" d="M6.427,85.283h100v-12.5h-100v12.5Zm0-31.25h100v-12.5h-100v12.5Zm0-43.75v12.5h100v-12.5h-100Z" transform="translate(-6.427 -10.283)" fill="#16161b"/>
+                            </svg>
+                             <svg class="close-icon dnone" xmlns="http://www.w3.org/2000/svg" width="100" height="99.998" viewBox="0 0 100 99.998">
+                                <g data-name="Group 40185" transform="translate(12865.792 17231.002)">
+                                    <path data-name="Path 39630" d="M202.364,132.359a50.058,50.058,0,0,0,0,70.719,50.008,50.008,0,0,0,70.751,0,50.017,50.017,0,1,0-70.751-70.718Zm65.919,65.89a43.186,43.186,0,0,1-61.087-61.06,43.185,43.185,0,1,1,61.086,61.059Z" transform="translate(-13053.531 -17348.744)" fill="#16161b"/>
+                                    <path data-name="Path 39631" d="M321.833,216.72,306.757,231.8,291.682,216.72l-4.966,4.966,15.076,15.075-15.076,15.076,4.966,4.966,15.076-15.075L321.833,256.8l4.966-4.966-15.075-15.076L326.8,221.686Z" transform="translate(-13122.554 -17417.775)" fill="#16161b"/>
+                                </g>
+                            </svg>
+                        </button>
+                        <div class="collapse navbar-collapse" id="headernavbar-3">
+                            {% if page.primary_menu %}
+                            {{page.primary_menu}}
+                            {% endif %}
+                        </div>
+                        <a href="#" title="search" role="button" id="searchdropdown3" data-bs-toggle="dropdown" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150.015" viewBox="0 0 150 150.015" id="header-search">
+                                <path data-name="Path 39004" d="M251.566,97.945a63.625,63.625,0,0,0-48.147,105.237L165.2,241.471l6.488,6.489,38.244-38.289A63.624,63.624,0,1,0,251.568,97.945Zm38.495,102.048a54.109,54.109,0,1,1,16.095-38.506A54.452,54.452,0,0,1,290.061,199.993Z" transform="translate(-165.199 -97.945)" fill="#111"/>
+                            </svg>
+                        </a>
+                        <div class="dropdown-menu header-seach-form" aria-labelledby="searchdropdown2">
+                            <form action="{{base_url}}/search/node" method="get" data-once="form-updated" data-drupal-form-fields="">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search" aria-describedby="search-value" name="keys">
+                                    <button class="btn btn-primary" type="submit" id="search-value">Search</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            
+        </div>
+    </div>
+    <div class="bottom-header-bar">
+        <div class="container">
+            <ul class="top-header">
+                <li class="header-ph"><h5><a href="tel:{{phoneNumberForValidator}}">{{phoneNumber}}</a></h5></li>
+                <li class="header-address site-add"><h5>{{address}}</h5></li>
+                <li class="languages"> {{ page.top_header }}</li>
+                <li class="link_sarch">    
+                    <a href="#" title="search" role="button" id="searchdropdown3" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150.015" viewBox="0 0 150 150.015" id="header-search">
+                            <path data-name="Path 39004" d="M251.566,97.945a63.625,63.625,0,0,0-48.147,105.237L165.2,241.471l6.488,6.489,38.244-38.289A63.624,63.624,0,1,0,251.568,97.945Zm38.495,102.048a54.109,54.109,0,1,1,16.095-38.506A54.452,54.452,0,0,1,290.061,199.993Z" transform="translate(-165.199 -97.945)" fill="#111"/>
+                        </svg>
+                    </a>
+                     <div class="dropdown-menu header-seach-form" aria-labelledby="searchdropdown1">
+                        <form action="{{base_url}}/search/node" method="get" data-once="form-updated" data-drupal-form-fields="">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" aria-describedby="search-value" name="keys">
+                                <button class="btn btn-primary" type="submit" id="search-value">Search</button>
+                            </div>
+                        </form>
+                    </div>
+                </li>    
+                <li class="link_sarch"><a href="{{base_url}}{{bookingLink}}" class="header-book-link">{{bookingLinkText}} </a></li>                      
+            </ul>
+        </div>
+    </div>    
+</header>
+{% endif %}

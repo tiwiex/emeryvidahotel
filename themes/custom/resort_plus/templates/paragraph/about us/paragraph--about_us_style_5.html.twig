@@ -1,0 +1,45 @@
+<section class="about-style-5">
+    <div class="container">
+        <div class="row">
+            <div class="tag-title">
+                <span class="tagline">{{content.field_tag_line.0}}</span>
+                <h2 class="sec-title">{{content.field_title.0}}</h2>
+            </div>
+            <div class="col-md-6 content-1">
+                {{content.field_description.0}}
+            </div>
+            <div class="col-md-6 content-2">
+                {{content.field_description_2.0}}
+            </div>
+            <div class="masonry-style-2">
+                <div class="row">
+                    <div class="col-md-6 masonry1">
+                        {% for key,value in content.field_multiple_image['#items'] %}
+                            {% if key == 0 %}
+                            <img src="{{ file_url(content.field_multiple_image['#items'][0].entity.uri.value) }}" alt="{{content.field_multiple_image['#items'][key].alt}}" /> 
+                            {% endif %}             
+                        {% endfor %}
+                        {% for key,value in content.field_multiple_image['#items'] %}
+                            {% if key == 1 %}
+                            <img src="{{ file_url(content.field_multiple_image['#items'][1].entity.uri.value) }}" alt="{{content.field_multiple_image['#items'][key].alt}}" /> 
+                            {% endif %}             
+                        {% endfor %}
+                    </div>
+                    <div class="col-md-6 masonry2">
+                        {% for key,value in content.field_multiple_image['#items'] %}
+                            {% if key == 2 %}
+                            <img src="{{ file_url(content.field_multiple_image['#items'][2].entity.uri.value) }}" alt="{{content.field_multiple_image['#items'][key].alt}}" /> 
+                            {% endif %}             
+                        {% endfor %}
+                        {% for key,value in content.field_multiple_image['#items'] %}
+                            {% if key == 3 %}
+                            <img src="{{ file_url(content.field_multiple_image['#items'][3].entity.uri.value) }}" alt="{{content.field_multiple_image['#items'][key].alt}}" /> 
+                            {% endif %}             
+                        {% endfor %}
+                    </div>
+                </div>
+                <h2>{{content.field_home_slider_title.0}}</h2>
+            </div>
+        </div>
+    </div>
+</section>        

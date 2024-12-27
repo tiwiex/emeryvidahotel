@@ -1,0 +1,29 @@
+ 
+<div class="accordian-3">
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+        <div class="accordion-item">
+            <div class="accordian-button-3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-{{paragraph.id()}}" aria-expanded="false" aria-controls="panelsStayOpen-{{paragraph.id()}}" tabindex="-1">
+                    {{content.field_questions.0}}
+                </button>
+                <div class="i-accordian-3-icons">
+                    <div class="faq-svg svg-plus d-block">
+                        <svg class="svg-plu " xmlns="http://www.w3.org/2000/svg" width="45" height="25.2" viewBox="0 0 45 25.2">
+                            <path id="Icon_ionic-ios-arrow-forwardss" data-name="Icon ionic-ios-arrow-forward" d="M28.85,28.688,12.172,11.673a3.25,3.25,0,0,1,0-4.542,3.13,3.13,0,0,1,4.462,0l18.9,19.279a3.259,3.259,0,0,1,.092,4.435L16.646,50.258a3.122,3.122,0,0,1-4.462,0,3.25,3.25,0,0,1,0-4.542Z" transform="translate(51.196 -11.246) rotate(90)" fill="#e4a853"/>
+                        </svg>
+                    </div>
+                    <div class="faq-svg-2 svg-minus d-none">    
+                        <svg class="svg-plu " xmlns="http://www.w3.org/2000/svg" width="45" height="25.2" viewBox="0 0 45 25.2">
+                        <path id="Icon_ionic-ios-arrow-forwards" data-name="Icon ionic-ios-arrow-forward" d="M17.6,22.492.925,5.476a3.25,3.25,0,0,1,0-4.542,3.13,3.13,0,0,1,4.462,0l18.9,19.279a3.259,3.259,0,0,1,.092,4.435L5.4,44.062a3.122,3.122,0,0,1-4.462,0,3.25,3.25,0,0,1,0-4.542Z" transform="translate(0 25.2) rotate(-90)" fill="#e4a853"/>
+                        </svg>
+                    </div>    
+                </div>
+            </div>    
+            <div id="panelsStayOpen-{{paragraph.id()}}" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-{{paragraph.id()}}" style="">
+                <div class="accordion-body">
+                    {{content.field_answer.0}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

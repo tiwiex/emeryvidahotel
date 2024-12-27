@@ -1,0 +1,18 @@
+<div class="search-form-resort">
+  <div class="text-center">
+    <h3 class="searchResult">Search Result - "{{ keyword }}"</h3>
+    <h4>We Found <span>{{ total_items_count }}</span> Search Results For "{{ keyword }}"</h4>
+  </div>
+</div>
+<div class="serach-content aos-init aos-animate" data-aos="fade-up" data-aos-duration="1000">
+  {%- if title is not empty -%}
+    <h2 class="text-center">{{ title }}</h2>
+  {%- endif -%}
+  {%- if items -%}
+        {%- for item in items -%}
+          {{ item.value }}
+        {%- endfor -%}
+  {%- else -%}
+	  {{- empty -}}
+  {%- endif -%}
+</div>

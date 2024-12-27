@@ -1,0 +1,76 @@
+{#
+/**
+ * @file
+ * Theme override to display a pager.
+ *
+ * Available variables:
+ * - items: List of pager items.
+ *   The list is keyed by the following elements:
+ *   - first: Item for the first page; not present on the first page of results.
+ *   - previous: Item for the previous page; not present on the first page
+ *     of results.
+ *   - next: Item for the next page; not present on the last page of results.
+ *   - last: Item for the last page; not present on the last page of results.
+ *   - pages: List of pages, keyed by page number.
+ *   Sub-sub elements:
+ *   items.first, items.previous, items.next, items.last, and each item inside
+ *   items.pages contain the following elements:
+ *   - href: URL with appropriate query parameters for the item.
+ *   - attributes: A keyed list of HTML attributes for the item.
+ *   - text: The visible text used for the item link, such as "‹ Previous"
+ *     or "Next ›".
+ * - current: The page number of the current page.
+ * - ellipses: If there are more pages than the quantity allows, then an
+ *   ellipsis before or after the listed pages may be present.
+ *   - previous: Present if the currently visible list of pages does not start
+ *     at the first page.
+ *   - next: Present if the visible list of pages ends before the last page.
+ *
+ * @see template_preprocess_pager()
+ */
+#}
+{% if items %}
+  <nav aria-label="{{ heading_id }}">
+    <h4 id="{{ heading_id }}" class="visually-hidden">{{ 'Pagination'|t }}</h4>
+    <ul class="pagination js-pager__items">
+      {% if items.first %}
+        <li class="page-item pager-first">
+          <a href="{{ items.first.href }}" class="page-link" title="{{ 'Go to first page'|t }}"{{ items.first.attributes|without('href', 'title') }}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="59" height="34.043" viewBox="0 0 59 34.043">
+              <g id="arrow-right_1_" data-name="arrow-right (1)" transform="translate(2.5 3.521)">
+                <path id="Path_28" data-name="Path 28" d="M52.786,0H0" transform="translate(1.214 13.5)" fill="none" stroke="#333239" stroke-linecap="round" stroke-width="5"/>
+                <path id="Path_3" data-name="Path 3" d="M16.2,27,0,13.5,16.2,0" transform="translate(0 0)" fill="none" stroke="#333239" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+              </g>
+            </svg>
+          </a>
+        </li>
+      {% endif %}
+      {% for key, item in items.pages %}
+        <li class="page-item {{ current == key ? 'active' : '' }}">
+          {% if current == key %}
+            <span class="page-link">
+              {{- key -}}
+            </span>
+          {% else %}
+
+            <a href="{{ item.href }}" title="{{ title }}"{{ item.attributes|without('href', 'title') }} class="page-link">
+              {{- key -}}
+            </a>
+          {% endif %}
+        </li>
+      {% endfor %}
+      {% if items.next %}
+        <li class="page-item">
+          <a class="page-link" href="{{ items.next.href }}" title="{{ 'Go to next page'|t }}" rel="next"{{ items.next.attributes|without('href', 'title', 'rel') }}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="59" height="34.043" viewBox="0 0 59 34.043">
+              <g id="arrow-right_1_" data-name="arrow-right (1)" transform="translate(2.5 3.521)">
+                <path id="Path_28" data-name="Path 28" d="M0,0H52.786" transform="translate(0 13.5)" fill="none" stroke="#333239" stroke-linecap="round" stroke-width="5"/>
+                <path id="Path_3" data-name="Path 3" d="M0,27,16.2,13.5,0,0" transform="translate(37.804 0)" fill="none" stroke="#333239" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+              </g>
+            </svg>
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}

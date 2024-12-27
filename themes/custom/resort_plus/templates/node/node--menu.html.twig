@@ -1,0 +1,24 @@
+<section class="menu-full-width menu_detail_page">
+    <div class="container">
+        <div class="image-wrapper">
+            <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" alt="menu-image">
+        </div>
+        <div class="content">
+            {{content.body.0}}
+        </div>
+        <div class="content-title">
+         <h3>{{content.field_content_title.0}}</h3>
+        </div>
+        {{content.field_description.0}}
+        <ul class="packages list-unstyled">
+            {% for key,value in content.field_features['#items'] %}
+            <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+                    <circle id="Oval" cx="75" cy="75" r="75" fill="#f9593a"/>
+                </svg>
+                <p>{{content.field_features[key]}}</p>
+            </li>
+            {% endfor %}
+        </ul>    
+    </div>
+</section>

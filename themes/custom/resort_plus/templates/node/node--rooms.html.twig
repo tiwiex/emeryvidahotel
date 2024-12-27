@@ -1,0 +1,69 @@
+
+
+<section class="rooms-detail roomDetails">
+    <div class="container">
+        <div class="slider-for">
+            {% for key,value in content.field_multiple_image['#items'] %}
+            <div class="item mb-4">         
+                <img src="{{ file_url(content.field_multiple_image['#items'][key].entity.uri.value) }}" alt="{{content.field_image['#items'][key].alt}}" />
+            </div>
+            {% endfor %} 
+        </div>
+        <div class="slider-nav">
+            {% for key,value in content.field_multiple_image['#items'] %}
+                <img src="{{ file_url(content.field_multiple_image['#items'][key].entity.uri.value) }}" alt="{{content.field_image['#items'][key].alt}}" />
+            {% endfor %}
+        </div>
+        <div class="tab">
+            <div class="tab1">               
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist"><button aria-controls="nav-tab1" aria-selected="false" class="nav-link active" data-bs-target="#nav-tab1" data-bs-toggle="tab" id="nav-tab1-tab" role="tab" type="button">Over View</button><button aria-controls="nav-tab2" aria-selected="false" class="nav-link" data-bs-target="#nav-tab2" data-bs-toggle="tab" id="nav-tab2-tab" role="tab" type="button">Reviews ({{comment_count}})</button><button aria-controls="nav-tab3" aria-selected="false" class="nav-link" data-bs-target="#nav-tab3" data-bs-toggle="tab" id="nav-tab3-tab" role="tab" type="button">Pricing Plans</button></div>
+                </nav>                   
+                <div class="tab-content" id="nav-tabContent">
+                    <div aria-labelledby="nav-tab1-tab" class="tab-pane fade active show" id="nav-tab1" role="tabpanel">
+                        {{content.field_over_view.0}}
+                        <div class="roomPrice">
+                                <div class="room-suites">
+                                    <a href="{{content.field_button_link.0['#url']}}" tabindex="-1">{{content.field_button_link.0['#title']}}</a>
+                                </div> 
+                                <div class="rooms_amount">  
+                                    <h3>{{content.field_price.0}}</h3>
+                                    <span>/{{content.field_price_plan.0}}</span>
+                                </div>    
+                            </div>   
+                            <div class="room-amenities">
+                                <h3>{{content.field_amenity.0}}</h3>
+                                <ul class="packages list-unstyled">
+                                    {% for key,value in content.field_amenities['#items'] %}
+                                            <li>
+                                                 <svg xmlns="http://www.w3.org/2000/svg" width="150" height="150" viewBox="0 0 150 150">
+                                                    <circle id="Oval" cx="75" cy="75" r="75" fill="#f9593a"></circle>
+                                                </svg>
+                                                <p>{{content.field_amenities[key]}}</p>
+                                            </li>
+                                    {% endfor %}
+                                </ul> 
+                            </div>  
+                        </div>
+                    <div aria-labelledby="nav-tab2-tab" class="tab-pane fade" id="nav-tab2" role="tabpanel">
+                        <h3 class="comment-count">{{comment_count}} Reviews</h3>
+                        {{content.field_comment}}  
+                        {% if logged_in == false %}
+                            <div class="login-wrapper">
+                                <h3><a href="{{base_url}}/user/login" title="Login">Login</a> or <a href="{{base_url}}/user/register" title="Register">Register</a> to post comments</h3>
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div aria-labelledby="nav-tab3-tab" class="tab-pane fade" id="nav-tab3" role="tabpanel">
+                        {% for key,value in content.field_rooms_pricing_list['#items'] %}
+                            {{content.field_rooms_pricing_list[key]}}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>    
+    </div>    
+</section>    
+
+
+        

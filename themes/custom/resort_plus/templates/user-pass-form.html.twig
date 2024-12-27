@@ -1,0 +1,33 @@
+{% set base_url = url('<front>')  %}
+<!-- Register Page banner -->
+{% if reset_banner_title %}
+    <section class="page-banner" style="background-image: url({{resetpassword_banner_img}}); background-repeat: no-repeat; background-size: cover;background-position: center;height:260px; position: relative;">
+        <div class="page-title-block">
+            <h1>{{reset_banner_title}}</h1>
+        </div>
+    </section>
+{% endif %}
+<!-- Password Reset Section Start-->
+<section class="page-forgot page-login">
+    <div class="container">
+        <div class="page-form-block">
+            <div class="form-wrapper" style="background-image: url('{{ resetpassword_bg_img }}');background-repeat: no-repeat;background-position: center;background-size: cover;">
+                <div class="content-wrapper">
+                    <h2 class="page_title">{{ reset_page_title }}</h2>
+                    <div class="form common_pages_form">
+                        <div class="form-group">
+                            {{ form.name }}
+                            {{ form.mail }}
+                        </div>
+                        <div class="login-btn">
+                            {{ form.actions }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ form.form_build_id }}
+    {{ form.form_id }}
+</section>
+<!-- Password Reset Section Ends-->

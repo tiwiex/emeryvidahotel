@@ -1,0 +1,15 @@
+<section class="portfolio">
+    <div class="container">
+        <div class="row">
+            <div class="tag-title">
+                <span class="tagline">{{content.field_tag_line.0}}</span>
+                <h2 class="sec-title">{{content.field_title.0}}</h2>
+            </div>   
+           {% for key,value in content.field_multiple_image['#items'] %}
+           <div class="col-md-4 col-lg-3">
+            <img src="{{file_url(content.field_multiple_image['#items'][key].entity.uri.value)}}" alt="{{file_url(content.field_image['#items'][key].alt)}}">
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>        

@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="120x120" href="#">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_3.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="#">
+    <link rel="icon" type="image/png" sizes="16x16" href="#">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap/bootstrap-toc.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/fontawesome-free/css/all.min.css">
+    <title>User Document | Resort Plus</title>
+  </head>
+  <body data-spy="scroll" data-target="#toc">
+  <div class="pt-wrapper">
+    <div id="pt-sidebar">
+      <div class="pt-brand">
+        drupalthemes.io <span class="badge badge-pill badge-primary">Doc</span>
+      </div>
+      <nav id="toc" data-toggle="toc"></nav>
+    </div>
+    <div id="pt-content">
+      <div class="theme-title-wrapper">
+        <div class="jumbotron"> 
+          <h1 class="jumbotron-heading">Resort Plus</h1> 
+          <div class="lead">
+            <div class="theme-tagline">User Documentation</div>
+            <div class="theme-creator-info"><span><strong>Author:</strong> <a href="https://www.drupalthemes.io" target="_blank">DRUPALTHEMES.IO</a></span> | <span><strong>Email:</strong> <a href="mailto:support@drupalthemes.io">support@drupalthemes.io</a></span></div>
+          </div>
+          <div class="jumbotron-footer">
+            <span class="badge rounded-pill bg-success">Drupal 10</span>
+          </div>
+          <div class="theme-creator-contact">
+            <a href="https://www.drupalthemes.io/support" class="btn btn-primary">Support</a><a href="https://www.drupalthemes.io" target="_blank" class="btn btn-primary">Visit DRUPALTHEMES.IO</a>
+          </div>
+        </div>
+      </div>
+      <div class="theme-content-wrapper">
+        <h1 id="installation">1. Installation</h1>
+        <p>This is an installation guide for the theme Resort Plus (Drupal 10). This document will guide you to install the theme from the scratch on your server. This documentation will also help you to manage various parts of the website's backend and manage the content on your website using this theme.</p>
+        <h2 id="fresh-installation">Fresh Installation</h2>
+        <p>The installation package consists of the complete Drupal website with the theme, various modules, sample content and is excellent for beginners to explore the back-end settings and the sample content. Installing the demo theme is just like installing Drupal but you will have the full demo website installed on your server.</p>
+        <p>Installing in the Localhost: Create a new folder in the htdocs folder for Xampp (www folder for Wamp). Example: mywebsite. Unpack all files and folders of the demo theme into the folder you just created and open the demo folder.</p>
+        <p>This section will guide you through general information such as system requirements and installation. Please check your PHP memory cache when using an installation profile. Depending on the installation profile, you need to allocate more memory cache for PHP.</p>
+        <h3>System Requirements</h3>
+        <p>If you are new to <a href="http://www.drupal.org" target="_blank">Drupal</a>, please take a look at <a href="https://www.drupal.org/docs/system-requirements" target="_blank">system requirements</a> on drupal.org</p>
+        <table class="table">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">PHP</th>
+              <th scope="col">MySQL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Drupal 10</th>
+              <td>8.1 or higher</td>
+              <td>5.7.8 or higher</td>
+            </tr>
+          </tbody>
+        </table>
+        <h3>Installation </h3>
+        <p>If you are new to Drupal, please take a look at the <a href="https://www.drupal.org/documentation/install" target="_blank"> Installation guide</a> on drupal.org to install the standard Drupal website and you can see all guides for Drupal on the <a href="https://www.drupal.org/documentation" target="_blank">Drupal documentation page</a>.</p>
+        <h3>How to do a fresh installation</h3>
+        <p>These instructions are for the people that have experience manually installing Drupal and importing databases. If you do not feel comfortable performing these steps yourself, contact your server administrator or a developer for help. <strong>WARNING</strong> Do not import the provided SQL file into an existing Drupal database or you will lose all existing data.</p>
+        <p>The full Drupal installation comes without images, which is only for the theme demonstration.</p>
+        <p>After purchasing the theme, you will get the download package. Extract the zip file somewhere on your computer.</p>
+        <h3>Step 1</h3>
+        <p>Download a theme package of your choice (e.g. Resort Plus) and extract the package.</p>
+        <p>Go to the folder <code>  resort_plus/</code></p>
+        <p>Here, you can find Drupal 10  <strong>(resort_plus_d10.zip) </strong>version of the theme Extract the zip which you want and follow the steps.</p>
+        <h3>Step 2</h3>
+        <p>Copy and extract the <strong>resort_plus_d10.zip</strong> file to the location on your web server where you want your site to be accessed and unzip the file.</p>
+        <h3>Step 3</h3>
+        <p>Go to <strong>resort_plus >> resort_plus_d10</strong> and unzip the database.zip</p>
+        <p>Access your MySQL database and create a new DB (e.g. resort_plus)</p>
+        <p><img src="images/db.png" class="doc-img img-fluid" /></p>
+        <p>Import the SQL file <code>resort_plus/resort_plus_d10/database/resort_plus_d10.sql</code> into the database created (e.g. resort_plus). The <a target="_blank" href="http://www.phpmyadmin.net/home_page/downloads.php">PhpMyAdmin</a> might be helpfull for managing your databases. </p>
+        <p><img src="images/db_import.png" class="doc-img img-fluid" /></p>
+        <h3>Step 4</h3>
+        <p>Go to the folder <code>resort_plus/resort_plus_d10/site/sites/default</code><br>Copy the file default.settings.php and rename it as settings.php<br>Give the "write" permission for the <strong>files</strong> folder and the <strong>settings.php </strong> file.</p>
+        <p>Install profile standard for Drupal </p>
+        <p><img src="images/config_1.png" class="doc-img img-fluid" /></p>
+        <p><img src="images/config_2.png" class="doc-img img-fluid" /></p>
+        <p><img src="images/config_3.png" class="doc-img img-fluid" /></p>
+        <p><img src="images/config_4.png" class="doc-img img-fluid" /></p>
+        <h3>Step 5</h3>
+        <p>Go to (url) <code>[your-website]/user</code> and Login to your website with the username <code>admin</code> and the password <code>admin@123</code> and visit (url) <code>admin/people</code> to change the admin username and password edit the <b>'admin'</b> Profile. You may visit to change the site-information.<code>Configuration > System > Basic site settings</code> </p>
+        <p>Go through the Drupal configuration found in <strong>admin/config</strong> options and update all necessary information to reflect on your website.</p>
+        <p>Visit <code>admin/config/development/performance</code> Clear all cache and finally, you will be having a full website.</p>
+        <h1 id="menu">2. Menu</h1>
+        <h3>Step 1</h3>
+        <p>Go to <code>Structure > Menu > Main navigation</code></p>
+        <p>Click on the Edit menu to add/remove/edit the links of the main navigation.</p>
+        <p><img src="images/menus.png" class="doc-img img-fluid" /></p>
+        <h3>Step 2</h3>
+        <p>Use <b>'Add link'</b> to add the new link to the main navigation.</p>
+        <p>Re-order the menu links by dragging the menus using the drag icon placed before each menu link.</p>
+        <p><img src="images/Menu _ Resort Plus.jpg" class="doc-img img-fluid" /></p>
+        <h3>Step 3</h3>
+        <p>Click on the <b>'Edit Menu'</b> to edit the existing menu.</p>
+        <p>You can change the menu name in 'Menu link title' field and change the menu link in 'link' field.</p>
+        <p>Check the 'show as expanded' check box if it has a dropdown menu.</p>
+        <p><img src="images/menu_edit.png" class="doc-img img-fluid" /></p>
+        <h1 id="theme-options">3. Theme Options</h1>
+        <p>Visit <code>/admin/appearance/settings/resort_plus</code> to configure your theme's settings. You can manage the theme option like general options, custom options, header options, etc.,</p>
+        <h2>General options</h2>
+        <p>You can manage the general theme option like header variations and content for the login page, maintenance page and coming soon page etc.</p>
+        <p>Here you can also change the configuration of the hamburger sidebar information menu.</p>
+        <p><img src="images/resort_plus_theme_setting (1).jpg" class="doc-img img-fluid" /></p>
+        <h2>Custom options</h2>
+        <p>You can be easily able to overwrite the existing styles or add your own styles to your site through the Custom CSS without looking into the backend.</p>
+        <p><img src="images/resort_plus_custome_option.jpg" class="doc-img img-fluid" />
+        <h2>Header options</h2>
+        <p>You can manage the header option of the theme here like header variation, Sticky header, Page loader and Scroll to top Button.</p>
+        <p>There are three header style options in this theme. You can click dropdown and choose any of them as you wish. You can be able to enable/disable the checkbox if you need sticky header option.</p>
+        <p><img src="images/resort_plus_header_option.jpg" class="doc-img img-fluid" /></p>
+        <h2>Logo &amp; Favicon options</h2>
+        <p>You can add your own custom logo.</p>
+        <p><img src="images/resort_plus_logo.jpg" class="doc-img img-fluid" /></p>
+        <p>You can upload your own custom favicon</p>
+        <p><img src="images/resort_plus_favicon.jpg" class="doc-img img-fluid" /></p>
+        <h2>Color scheme options</h2>
+        <p>The color scheme option provides the color panel, from which you can select the color for your site, Check the "Use the Default Color to Get Default Color"</p>
+        <p><img src="images/resort_plus_color_setting.jpg" class="doc-img img-fluid" /></p>
+        <h2>Language options</h2>
+        <p>Visit <code>/admin/config/regional/language/add</code> to add the languages to your site.</p>
+        <p><img src="images/language.png" class="doc-img img-fluid" /></p>
+        <p>To translate your site to other languages. first, you have to add the content to be translated. Select the required language from "Translation language" dropdown and add the content.</p>
+        <p>Example: If you want to translate your content to french, select french from the "Translation language" dropdown and add the content in french.</p>
+        <h1 id="content-types">4. Content Types</h1>
+        <h2>Basic page</h2>
+        <p>The 'Basic page' content type is used to create the static contents, such as 'About us, Team' pages.</p>
+        <p><img src="images/Resort_basic_page.jpg" class="doc-img img-fluid" /></p>
+        <p>
+          <ul>
+            <li><b>paragraph:</b> This is used to add the sections to the page. You can add the section you want by selecting from the select list.</li>
+            <li><b>Page Banner:</b> This is used to select page banner for basic page contents </li>
+          </ul>
+        </p>
+        <h2>Blog</h2>
+        <p>The 'Blog' content type is used to add the contents for blogs.</p>
+        <p><img src="images/_Resort PlusBlog.jpg" class="doc-img img-fluid" /></p>
+        <p>
+          <ul>
+            <li><b>Body:</b> This field is used to add the content to the page.</li>
+            <li><b>blockquote:</b> This field is used to write blockquote.</li>
+            <li><b>Image:</b> This field is used for uploading the images for Blog post. This Image will be Displayed in blog listing section.</li>
+            <li><b>Content Title:</b> This field is used to add Title for the description.</li>
+            <li><b>Description:</b> This field is used to add descriptions. This will display in Blog Detail page.</li>
+            <li><b>Multiple Images:</b> This field is used for uploading the multiple images for Blog slider.It will display in blog Detail page.</li>
+            <li><b>Content:</b> This field is used to add the content After the Blog Content Image.</li>
+            <li><b>Page Banner:</b> This is used to select page banner for blog contents</li>
+            <li><b>Tags:</b> This is a term reference field that is linked to a vocabulary created Generally. You can add the Tags for the blogs.</li>
+            <li><b>Comment:</b> This field is used for comment on the post.</li>
+          </ul>
+        </p>
+        <h2>Landing Page</h2>
+        <p>The 'Landing Page' content type is used to add the contents for home pages.</p>
+        <p><img src="images/Landingpage_resort.jpg" class="doc-img img-fluid" /></p>
+        <p>
+          <ul>
+            <li><b>paragraph:</b>  This is used to add the sections to the page. You can add the section you want by selecting from the select list.</li>
+          </ul>
+        </p>
+        <h2>Careers</h2>
+        <p>The 'Project' content type is used to add the contents for Project page.</p>
+        <p><img src="images/careers_Resort.jpg" class="doc-img img-fluid" /></p>
+        <p>
+          <ul>
+            <li><b>Body:</b> This field is used to add the content to the page.</li>
+            <li><b>Content Title:</b> This field is used to add Title for the description.</li>
+            <li><b>Button Link:</b> This field is used to add the Button Link for more information.</li>
+            <li><b>Images:</b> This field is used to add the multiple Images to the Project.</li>
+            <li><b>Experience:</b> This field is used to add experience for Career.</li>
+            <li><b>Job Description List:</b> This field is used to add job description as list.</li>
+            <li><b>Job Description Title:</b> This field is used to provide title for job description.</li>
+            <li><b>Job Type:</b> This field is used to provide what kind of job we want.</li>
+            <li><b>Job Type Icon:</b> This field is used to  upload a icon for the job.</li>
+            <li><b>Content Description:</b> This field is used to add descriptions. This will display in Careers Detail page.</li>
+            <li><b>Location:</b> This field is used to provide location.</li>
+            <li><b>Location Icon:</b> This field is used to  upload a icon for the location.</li>
+            <li><b>Page Banner:</b> This is used to select page banner for Career page contents.</li>
+          </ul>
+        </p>
+        <h2>Service</h2>
+        <p>The 'Service' content type is used to add the contents for Service page.</p>
+        <p><img src="images/Services_resort_plus.jpg" class="doc-img img-fluid" /></p>
+        <p>
+          <ul>
+            <li><b>Body:</b> This field is used to add the content to the page.</li>
+            <li><b>Description:</b> This field is used to add descriptions. This will display in Service Detail page.</li>
+            <li><b>Content Title:</b> This field is used to add Title for the description.</li>
+            <li><b>Image:</b> This field is used for uploading images for Service and  Uploaded image will displayed in Service listing section.</li>
+            <li><b>Icons:</b> This field is used to Add Icons. It will be displayed in Service listing section</li>
+            <li><b>Multiple Images:</b> This field is used for uploading the multiple images for Service slider.It will display in Service Detail page.</li>
+            <li><b>Button Link:</b> This field is used to add the Button Link for more information.</li>
+            <li><b>Page Banner:</b> This is used to select page banner for Career page contents.</li>
+          </ul>
+        </p>
+        <h2>Chef</h2>
+        <p>The 'Chef' content type is used to add chef Memeber.</p>
+        <p><img src="images/chef.jpg" class="doc-img img-fluid" /></p>
+        <p>
+          <ul>
+            <li><b>Body:</b> This field is used to add the content to the page.</li>
+            <li><b>Designation:</b> This field is used to add the Designation of chef.</li>
+            <li><b>Image:</b> This field is used to add the Image of client</li>
+            <li><b>Social Media Link:</b> This field is used to add the Social Profile of Team Member</li>
+            <li><b>Page Banner:</b> This is used to select page banner for chef page contents.</li>
+          </ul>
+        </p>
+        <h2>Testimonial</h2>
+        <p>The 'Testimonial' content type is used to add the contents for Testimonial page.</p>
+        <p><img src="images/testimonials_resort.jpg" class="doc-img img-fluid" /></p>
+        <p>
+          <ul>
+            <li><b>Designation:</b> This field is used to add the Designation of client.</li>
+            <li><b>Image:</b> This field is used to add the Image of client.</li>
+            <li><b>Rating:</b> This field is used to provide Rating for client.</li>
+            <li><b>Page Banner:</b> This is used to select page banner for chef page contents.</li>
+            <li><b>Note:</b> This content has no detail page.</li>
+          </ul>
+        </p>
+        <h2>Menu</h2>
+        <p>The 'Menu' content type is used to add the contents for menu page.</p>
+        <p><img src="images/Menu_page.jpg" class="doc-img img-fluid" /></p>
+        <p>
+          <ul>
+            <li><b>category:</b> This is a term reference field that is linked to a vocabulary created Generally. You can add the Tags for the menu items.</li>
+            <li><b>Image:</b> This field is used to add the Image of menu.</li>
+            <li><b>Description:</b> This field is used to add descriptions. This will display in menu Detail page.</li>
+            <li><b>Content Title:</b> This field is used to add Title for the description.</li>
+            <li><b>Page Banner:</b> This is used to select page banner for menu page contents.</li>
+            <li><b>Price:</b> Price field used to provide the price for the menu items.</li>
+            <li><b>Features:</b>This field is used to add features about the resort as list.</li>
+          </ul>
+        </p>
+        <h2>Rooms</h2>
+        <p>The 'Rooms' content type is used to add the contents for Rooms page.</p>
+        <p><img src="images/Menu_page.jpg" class="doc-img img-fluid" /></p>
+        <p>
+          <ul>
+            <li><b>Amenities:</b> This field used to add the Amenities available in the resort. </li>
+            <li><b>Amenity Title:</b>This field is used to add title for the Amenities.</li>
+            <li><b>Image:</b> This field is used to add the Image of menu.</li>
+            <li><b>Button Link:</b> This field is used to add the Button Link for Call to Action.</li>
+            <li><b>Description:</b> This field is used to add descriptions. This will display in menu Detail page.</li>
+            <li><b>Content Title:</b> This field is used to add Title for the description.</li>
+            <li><b>Page Banner:</b> This is used to select page banner for menu page contents.</li>
+            <li><b>Price:</b> Price field used to provide the price for the menu items.</li>
+            <li><b>Multiple Images:</b> This field is used for uploading the multiple images for rooms slider.It will display in room detail page.</li>
+            <li><b>Feet:</b>This field is used to add the width and length of the room.</li>
+            <li><b>Guest:</b>This field is used to add number of guests.</li>
+            <li><b>Comment:</b> This field is used for comment on the post.</li>
+          </ul>
+        </p>
+        <h2>Sidebar</h2>
+        <p>Any Sidebar can be added to the Above mentioned Content Types by configure the block<code> Dashboard > Structure > Block Layout > Sidebar second </code></p>
+        <p><img src="images/sidebar_config.png" class="doc-img img-fluid" /></p>
+        <p>Select the page where the block need to be displayed</p>
+        <p><img src="images/sidebar_resort.jpg" class="doc-img img-fluid" /></p>
+        <h1 id="paragraph_ee">5. Paragraphs Editor</h1>
+        <p>This is used to simplify the work of the editors using Paragraphs.  This module uses a modal dialog to show the paragraph listing while adding the content using the paragraphs. Furthermore, paragraphs can be assigned to one or more categories so that they can be found more easily in the revised modal dialog.</p>
+        <p><img src="images/addpara.jpg" class="doc-img img-fluid" /></p>
+        <h3>To make use of the re-styled dialog:</h3>
+        <p>You should configure your Paragraphs reference field widget to use the modal dialog for adding paragraphs to your content</p>
+        <p><b>Step 1</b></p>
+        <p>Add a paragraph reference field (e.g. paragraph) and go to <b>Manage form display</b>.</p>
+        <p><img src="images/edit_content.jpg" class="doc-img img-fluid" /></p>
+        <p><b>Step 2</b></p>
+        <p>Select the paragraph widget as <b>'Paragraphs (stable)'</b>.</p>
+        <p>Click the settings icon displayed on the rigt-hand side and select modal form from the Add mode select box. Further, here you can edit the configurations based on your requirement.</p>
+        <p><img src="images/paragraph-ee-form-display.png" class="doc-img img-fluid" /></p>
+        <h3>To add the categories list:</h3>
+        <p>Go to <code>admin &gt; structure &gt; paragraphs_category</code> Then, you can add the categories here.</p>
+        <p><img src="images/Paragraphs categories _ Resort Plus.jpg" class="doc-img img-fluid" /></p>
+        <p>Go to the paragraph edit page and select the category.</p>
+        <p><img src="images/_paragraph type _ Resort Plus.jpg" class="doc-img img-fluid" /></p>
+        <p>Refere to the <a href="https://www.drupal.org/project/paragraphs" target="_blank"><b>paragraphs module</b></a> to know more about it.</p>
+        <h1 id="categorization">6. Taxonomy / Category</h2>
+        <p>Taxonomy is used for categorizing the content of your site based on the tags.</p>
+        <p>Visit <code>/admin/structure/taxonomy</code> to manage your category list</p>
+        <p><img src="images/tag_resort.jpg" class="doc-img img-fluid" /></p>
+        <p>Click on the 'list term' to <b>add/edit/delete</b> the categories</p>
+        <h1 id="webform">7. Webform</h1> 
+        <p>Visit <code>/admin/structure/webform</code> to manage your forms.</p> 
+        <p>This page lists all available webforms</p>
+        <p><img src="images/Webforms_Resort Plus.jpg" class="doc-img img-fluid" /></p>
+        <p>Use <strong>'Build'</strong> to Edit the fields of the form</p>
+        <p><img src="images/contact_form.png" class="doc-img img-fluid" /></p>
+        <p><strong>Creating a new field</strong></p>
+        <p>Click on the <strong>'add element'</strong> to add the new field to your form.</p>
+        <p><img src="images/webform_field.png" class="doc-img img-fluid" /></p>
+        <p>Use the name of the key to placing your field in the file. Here 'name' is the key name use this ad your field_name</p>
+        <p>
+           1. Open resort_plus/templates/webform then open the file which has the corresponding file name. (with a text editor)<br>
+           2. Find {{ element.elements.message }}<br>
+           3. Insert code after: {{ element.elements.field_name }}<br>
+           4. Save the file and go to Configuration &gt; Performance to clear site cache
+        </p>
+        <h1 id="block-layout">8. Block Layout</h1>
+        <p>The block Layouts are the regions that are a special arrangement of Rows, , and they provide basic page structure for your site. There are many pre-built layout regions that you can use or create new regions.</p>
+        <p>The Blocks you placed on the specific region that will be shown at that place on your site. Adding blocks to the region will explain below.</p>
+        <p><img src="images/blockLayout.jpg" class="doc-img img-fluid" /></p>
+        <ul>
+          <li><b>Note:</b> The Banner Image will not be visible in the Landing Page content type.</li>
+        </ul>
+        <h1 id="region">9. Region</h1>
+        <p>If you are using the demo install profile, then this setup had been already done. In such case, you may only need to modify things.</p>
+        <p>However, We still recommend that you to read this section carefully because it contains important information which will be useful during the modification of the block configuration.</p>
+        <h2>Assigning block</h2>
+        <p>Blocks are placed in regions via the Block Admin page <code> Dashboard > Structure > Block Layout </code> Here you can Enable, throttle, place, configure blocks and Add a region.</p>
+        <p><img src="images/block_layout_full.jpg" class="doc-img img-fluid" /></p>
+        <h2>Creating a new region</h2>
+        <p>
+           1. Open resort_plus/resort_plus.info.yml file (with a text editor)<br>
+           2. Find footer_fifth: 'Footer fifth'<br>
+           3. Create your region: region_name: 'Region Name' (e.g. banner: 'Banner')<br>
+           4. Save resort_plus.info.yml file and go to Configuration >> Performance to clear site cache
+        </p>
+        <h2>Placing your block region</h2>
+        <p>
+          1. Open resort_plus/template/page/page.html.twig file (with a text editor)<br>
+          2. Paste the region (e.g. page.region_name) to wherever you want to display the block region:</p>
+        <p><img src="images/region.png" class="doc-img img-fluid" /></p>
+        <p>You can place the existing block or create a custom block on the region where you want.</p>
+        <p><img src="images/block_add.png" class="doc-img img-fluid" /></p>
+        <p><img src="images/block_config.png" class="doc-img img-fluid" /></p>
+        <h2>Creating a Custom Block</h2>
+        <p>Custom Blocks are created in Custom block library page <code> Dashboard > Structure > Block Layout > Custom Block Library </code></p>
+        <p><img src="images/Custom block library (1).jpg" class="doc-img img-fluid" /></p>
+        <p>Add the Block type and create blocks by using 'add custom block' like sidebar etc..</p>
+        <h1 id="shortcodes">10. Shortcodes</h1>
+        <p>We provide pre-built shortcodes, you can use these styles while adding content to your site. This will be used only on the body field.</p>
+        <p><strong>To use:</strong> If you want to add any section available in the shortcodes page in your new page or existing page, You can copy the code from the shortcodes page (e.g. Button) and place it in the body field and modify the dummy content.</p>
+        <p><img src="images/Buttons.jpg" class="doc-img img-fluid" /></p>
+        <h1 id="tour_module">11. Tour Module</h1>
+        <p>DRUPALTHEMES.IO exclusively provides the "Tour" option which takes you to context-sensitive tour for the main parts of your website interface via tooltips. Using this tour, you can easily able to customize your website. </p>
+        <p>After enabled the tour module, Visit the home page of your site to start a tour and you will see "Tour" button in the top-right corner of the admin menu. Clicking this button starts the tour.</p>
+        <p><img src="images/tourmodule_resort (3).jpg" class="doc-img img-fluid" /></p>
+        <p><strong>Take a Tour</strong></p>
+        <p>To take a Tour, click on the 'Tour' link.  It will show the popup to start the tour, click next for further information.</p>
+        <p><img src="images/tour_resort.png" class="doc-img img-fluid" /></p>
+        <p>The required information of the sections shows on the popup, click next to know the flow of the page.</p>
+        <p><img src="images/tt.png" class="doc-img img-fluid" /></p>
+        <h1 id="technical_support">12. Technical Support</h1>
+        <p>Thank you for purchasing our theme and reading the documentation! We hope this guide helped you to create the best website you were envisioning. Again, thank you so much for using our theme. As said in the beginning, we would be glad to help you if you have any questions related to this theme.</p>
+        <p>Please feel free to contact us via email : <b><a href="mailto:support@drupalthemes.io">support@drupalthemes.io</a></b> or submit an enquiry to our <b><a href="https://www.drupalthemes.io/support">enquiry</a></b></p>
+        <p>When you contact us, please take a screenshot with descriptions of your problem. More details about your problems, you provide, would help us to figure out and respond to you sooner.</p>
+
+        <p><b>SCOPE OF SUPPORT </b></p>
+        <p>Our support only includes helping with problems using any features and any bugs that may arise. Unfortunately, we cannot provide support for customizations or third-party plugins, or any issues that may have arisen while you work with the theme. If you need help with customization of your theme, please contact us with your requirements. Our technical team will help you customize the theme for your needs at extra charge.</p>
+        
+        <p><b>SUPPORT SCHEDULE</b></p>
+        <p>Our technical team is available from <b>Monday to Friday</b>. If you email or submit an enquiry during the weekend, please be patient and we will respond to you at the earliest.</p>
+      </div>
+      <!-- Go to Top -->
+      <a id="go-to-top" href="#" class="btn" role="button" title="Go To Top"><i class="fas fa-angle-up"></i></a>
+    <!-- Go to Top End -->
+    <!-- Footer -->
+    <footer id="pt-footer">
+      <div class="footer-wrapper">
+          <div>© 2024. <a href="https://www.drupalthemes.io">DRUPALTHEMES.IO.</a> All Rights Reserved.</div>
+          <ul>
+            <li><a href="https://www.drupalthemes.io/terms-of-use" title="Terms of Use">Terms of Use</a></li>
+            <li><a href="mailto:support@drupalthemes.io" title="Support">Support</a></li>
+          </ul>
+      </div>
+    </footer>
+    <!-- End of Footer -->
+    <!-- Scripts -->
+    <script src="js/lib/jquery/jquery.min.js"></script>
+    <script src="js/lib/popper/popper.min.js"></script>
+    <script src="js/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="js/lib/bootstrap/bootstrap-toc.js"></script>
+    <script src="js/scripts.js"></script>
+  </body> 
+</html>

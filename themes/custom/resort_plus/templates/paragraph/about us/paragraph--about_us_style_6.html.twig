@@ -1,0 +1,14 @@
+<section class="about-style-6">
+    <div class="container">
+        <div class="row">
+            <div class="tag-title">
+                <span class="tagline">{{content.field_tag_line.0}}</span>
+                <h2 class="sec-title">{{content.field_title.0}}</h2>
+            </div>
+            <div class="picture">
+                <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" alt="{{file_url(content.field_image['#items'].alt)}}">
+            </div>    
+            {{content.field_paragraph}}
+        </div>
+    </div>
+</section>        

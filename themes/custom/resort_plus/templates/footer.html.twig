@@ -1,0 +1,55 @@
+<footer class="footer-block">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                {% if page.footer_third %}
+                {{page.footer_third}}
+                {% endif %}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 footer-first">
+                 {% if page.header %}
+                            {{page.header}}
+                        {% endif %}
+                 {% if page.footer_second %}
+                {{page.footer_second}}
+                {% endif %}
+            </div>
+                        
+            <div class="col-md-3"> 
+                {{page.footer_fourth}}
+            </div>
+            <div class="col-md-3"> 
+                <h4 class="quick-links-title">Address</h4>
+                <p class="footer-address">{{address}}</p>
+                <p class="footer-address">07059199996 <br>
+07068889447 <br>
+
+08128500049 (WhatsApp no)</p>
+
+
+
+            </div>
+
+            <div class="col-md-3"> 
+    <h4 class="quick-links-title">Address</h4>
+    <p class="footer-address">{{ address }}</p>
+
+    <h4 class="quick-links-title">Contact Us</h4>
+    <p class="footer-address">
+        <span><i class="fas fa-phone"></i> 07059199996</span><br>
+        <span><i class="fas fa-phone"></i> 07068889447</span><br>
+        <span><i class="fab fa-whatsapp"></i> 08128500049 (WhatsApp)</span>
+    </p>
+</div>
+            <div class="col-md-3 footerReserve">
+                <h4 class="quick-links-title">Reservation</h4>
+                <p><a href="tel:{{phoneNumberForValidator}}">{{phoneNumber}}</a></p>
+                <p><a href="mailto:{{email}}">{{email}}</a></p> 
+            </div>
+        </div>
+        <hr>
+        <p class="footer-copy-right">{{copyRight}}</p>    
+    </div>
+</footer>

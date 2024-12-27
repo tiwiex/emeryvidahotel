@@ -1,0 +1,16 @@
+<section class="home-1-testimonials testimonials">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <span class="tagline">{{content.field_tag_line.0}}</span>
+                <h2 class="section-title">{{content.field_title.0}}</h2>
+                {{content.field_testimonials_style}} 
+            </div>
+            <div class="col-md-6">
+                <div class="img-wrapper">
+                    <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" alt="">
+                </div>
+            </div>   
+        </div>     
+    </div>        
+</section>    

@@ -1,0 +1,23 @@
+{% if content.field_layout.0['#markup'] in 'style 2' %}
+    <section class="testimonials testimonials-style-3 with-bg">
+        <div class="container">
+            {% if content.field_title[0] %}
+                <div class="tag-title">
+                    <span class="tagline">{{content.field_tag_line.0}}</span>
+                    <h2 class="sec-title">{{content.field_title.0}}</h2>
+                </div>  
+                {% endif %}
+                {{content.field_testimonials_style}}
+            </div>
+    </section>
+{% else %}
+    <section class="testimonials testimonials-style-3">
+        <div class="container">
+        <div class="tag-title">
+                <span class="tagline">{{content.field_tag_line.0}}</span>
+                <h2 class="sec-title">{{content.field_title.0}}</h2>
+            </div>  
+            {{content.field_testimonials_style}}
+        </div>
+    </section>
+{% endif %}

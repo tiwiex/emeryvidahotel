@@ -1,0 +1,10 @@
+<section class="blogs blog-style1">
+    <div class="container">
+        <span class="tagline">{{content.field_tag_line.0}}</span>
+        <h2 class="section-title">{{content.field_title.0}}</h2>
+        {{content.field_blog_style_}}
+        {% if content.field_button_link[0] %}
+            <a class="button-link home1-btn" href="{{content.field_button_link.0['#url']}}">{{content.field_button_link.0['#title']}}</a>
+        {% endif %}
+    </div>
+</section>

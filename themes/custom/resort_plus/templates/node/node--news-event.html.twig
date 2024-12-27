@@ -1,0 +1,49 @@
+{% set base_url = url('<front>') %}
+<section class="events-detail">
+    <div class="container">
+        <div class="image-wrapper">
+            <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" alt="event-image">
+        </div>
+        <h3>{{content.field_content_title.0}}</h3>
+        <div class="events-content">
+            {{content.body.0}}
+        </div>
+        <div class="event-date-time">
+            <div class="events-date">
+                <svg xmlns="http://www.w3.org/2000/svg" width="62.182" height="68" viewBox="0 0 62.182 68">
+                    <g id="Icon_feather-calendar" data-name="Icon feather-calendar" transform="translate(-2.5 -1)">
+                        <path id="Path_551" data-name="Path 551" d="M10.965,6H56.217a6.519,6.519,0,0,1,6.465,6.573V58.581a6.519,6.519,0,0,1-6.465,6.573H10.965A6.519,6.519,0,0,1,4.5,58.581V12.573A6.519,6.519,0,0,1,10.965,6Z" transform="translate(0 1.846)" fill="none" stroke="#e4a853" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+                        <path id="Path_552" data-name="Path 552" d="M24,3v9.692" transform="translate(22.52 0)" fill="none" stroke="#e4a853" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+                        <path id="Path_553" data-name="Path 553" d="M12,3v9.692" transform="translate(8.662 0)" fill="none" stroke="#e4a853" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+                        <path id="Path_554" data-name="Path 554" d="M4.5,15H62.682" transform="translate(0 13.6)" fill="none" stroke="#e4a853" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+                    </g>
+                </svg>
+                <h5>{{content.field_date.0}}</h5>
+            </div>
+            <div class="event-time">
+                <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" viewBox="0 0 65 65">
+                    <path id="Shape" d="M32.5,65A32.5,32.5,0,1,1,65,32.5,32.538,32.538,0,0,1,32.5,65Zm0-58.905a26.356,26.356,0,1,0,18.684,7.72A26.248,26.248,0,0,0,32.5,6.095ZM46.569,43.669a3.068,3.068,0,0,1-1.532-.41l-14.06-8.125A3.053,3.053,0,0,1,29.455,32.5V14.22a3.047,3.047,0,1,1,6.094,0V30.757l12.534,7.234a3.071,3.071,0,0,1,1.444,1.887,2.992,2.992,0,0,1-.3,2.273A3.077,3.077,0,0,1,46.569,43.669Z" fill="#e4a853"/>
+                </svg>
+                <h5>{{content.field_event_time.0}}</h5>
+            </div>
+            <div class="location">
+                <svg xmlns="http://www.w3.org/2000/svg" width="57.32" height="69.394" viewBox="0 0 57.32 69.394">
+                    <g id="map-pin" transform="translate(-0.5 1.5)">
+                        <path id="Path_27" data-name="Path 27" d="M55.32,27.343c0,20.489-26.16,38.051-26.16,38.051S3,47.832,3,27.343a26.161,26.161,0,1,1,52.32,0Z" transform="translate(0)" fill="none" stroke="#e4a853" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+                        <circle id="Ellipse_17" data-name="Ellipse 17" cx="10.062" cy="10.062" r="10.062" transform="translate(18.845 17.215)" fill="none" stroke="#e4a853" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+                    </g>
+                </svg>
+                <h5>{{content.field_location.0}}</h5>
+            </div>
+        </div>
+
+        {% if logged_in == false %}
+            <div class="login-wrapper">
+                <h4>You must<a href="{{base_url}}/user/login" title="Login"> Login</a> to Our site to register this event!</h4>
+            <a class="button-link d-none" href="{{content.field_button_link.0['#url']}}">{{content.field_button_link.0['#title']}}</a>
+            </div>
+            {% else %}
+             <a class="button-link" href="{{content.field_button_link.0['#url']}}">{{content.field_button_link.0['#title']}}</a>
+        {% endif %}
+    </div>
+</section>

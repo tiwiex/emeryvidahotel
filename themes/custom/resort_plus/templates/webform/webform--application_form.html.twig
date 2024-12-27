@@ -1,0 +1,35 @@
+                 
+<section class="form career-apply-form">
+    <div class="container">
+        <form {{attributes}}>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="input-wrapper">
+                        {{element.elements.name}}
+                    </div>    
+                </div>   
+                <div class="col-md-6">
+                    <div class="input-wrapper">
+                        {{element.elements.email}}
+                    </div>    
+                </div>    
+                <div class="col-md-6">
+                    <div class="input-wrapper">
+                        {{element.elements.phone_number}}
+                    </div>    
+                </div>  
+                <div class="col-md-6">
+                    <div class="input-wrapper">
+                        {{element.elements.resume}}
+                    </div>    
+                </div>  
+            </div>
+                    
+            <div class="career_btn">{{element.elements.actions}}</div>
+            {{ element.form_token }}
+            {{ element.form_build_id }}
+            {{ element.form_id }}
+        </form>
+    </div>
+</section>
+                   

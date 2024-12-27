@@ -1,0 +1,6 @@
+dt_user_statistics.domain_verify:
+  path: '/drupalthemes/{theme_name}/verify'
+  defaults:
+    _controller: 'Drupal\dt_user_statistics\Controller\VerifyController::verifyTheme'
+  requirements:
+    _access: 'TRUE'

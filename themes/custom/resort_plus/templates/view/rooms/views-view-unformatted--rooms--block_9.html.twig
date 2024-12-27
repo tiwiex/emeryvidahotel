@@ -1,0 +1,16 @@
+    {% for row in rows %}
+        {% if loop.index == 1 %}
+            <div class="col-md-6 feaured-room1">
+                {{ row.content }}
+            </div>
+        {% endif %}  
+    {% endfor %}
+    <div class="col-md-6">
+        <div class="row">
+            {% for row in rows %}
+                {% if loop.index > 1  %}
+                    {{ row.content }}
+                {% endif %}  
+            {% endfor %}
+        </div>    
+    </div>
